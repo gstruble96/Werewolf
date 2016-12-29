@@ -1,3 +1,5 @@
+/**import MyLinkedList.Node; */
+
 public abstract class MyAbstractList<E> implements MyList<E> {
   
   protected int size = 0; // The size of the list
@@ -13,8 +15,8 @@ public abstract class MyAbstractList<E> implements MyList<E> {
   }
 
   /** Add a new element at the end of this list */
-  public void add(E e) {
-    add(size, e);
+  public void add(E object) {
+    add(size, object);
   }
 
   /** Return true if this list contains no elements */

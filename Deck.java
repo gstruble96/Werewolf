@@ -1,6 +1,8 @@
 import java.util.Random;
+import java.util.Scanner;
 
-public class Deck {
+
+public class Deck{
   
   private int numCards;
   private MyLinkedList<Card> cards;
@@ -18,6 +20,11 @@ public class Deck {
   public MyLinkedList<Card> getCards() {
     return cards;
 }
+  private static int middlecards = 3;
+  
+  public static int getMiddleCards(){
+	  return middlecards;
+  }
   
   /*public void shuffle(int numCards) {
     for (int i=numCards-1; i >0; i--) {
@@ -46,10 +53,23 @@ public class Deck {
       cards.prepend(cards.extractSublist(beg,end));
       county++;
       }
-  }
+    }
+    }
+  
+   public MyLinkedList<Playerhand> ShowPlayers(Player[] playas) {
+	   MyLinkedList<Playerhand> table = new MyLinkedList<Playerhand>();
+	   for(int i = 0; i < numCards - middlecards; i++) {
+		   Playerhand hand = new Playerhand(playas[i], cards.get(i));
+		   table.add(hand);
+   }
+	return table;
     
   }
-    
+}
+   
+   ///the main method for pregame operations
+
+
     
     
     
@@ -67,4 +87,3 @@ public class Deck {
       count++;
       }
     }*/
-}
